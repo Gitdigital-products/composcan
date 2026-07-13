@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "composcan"
+version = "0.1.0"
+description = "Software Composition Analysis Tool"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [{name = "composcan Contributors"}]
+keywords = ["sca,open-source,license-compliance,vulnerabilities"]
+dependencies = []
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+[project.scripts]
+composcan = "composcan.__main__:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
